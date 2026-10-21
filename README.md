@@ -89,7 +89,6 @@ Go · Gin · MySQL · Redis · RabbitMQ
         · 多级缓存，并做过一次有意的缓存击穿实验<br/>
         · Redis ZSET 预乘时间权重实现热度衰减，读时 O(log N) 取 TopK<br/>
         · 正在拆成 4 个微服务上 kind 集群，配故障注入开关 + k6 压测对比<br/>
-        · <a href="https://www.bilibili.com/video/BV1Dti7B9E6Y">项目演示视频</a>
       </sub>
     </td>
   </tr>
@@ -113,8 +112,6 @@ Go · Gin · MySQL · Redis · RabbitMQ
 ## 📊 GitHub
 
 <div align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=Camelia-hu&show_icons=true&include_all_commits=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=4E8CF7&icon_color=8E6EF7&text_color=C9D1D9" alt="" />
-  <img height="160" src="https://streak-stats.demolab.com?user=Camelia-hu&theme=tokyonight&hide_border=true&background=0D1117&ring=4E8CF7&fire=8E6EF7&currStreakLabel=4E8CF7&sideLabels=C9D1D9&dates=C9D1D9" alt="" />
   <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Camelia-hu&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=4E8CF7&text_color=C9D1D9" alt="" />
   <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=Camelia-hu&bg_color=0D1117&color=C9D1D9&line=4E8CF7&point=8E6EF7&area=true&hide_border=true" alt="" />
 </div>
