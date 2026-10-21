@@ -33,9 +33,6 @@
 
 现在主要精力在 **AIOps**：让 Agent 自己读指标、日志、链路和拓扑，把根因找出来——而且每条结论都必须绑着证据，能被复现、能被评测。
 
-> 这个执念来自一次真实排查：在开源项目里追一个 20 小时才复现的死锁，面板一直显示「健康」。
-> 从那以后就认定，**不绑证据的结论都是猜**。
-
 <br/>
 
 ## 🛠 技术栈
@@ -48,7 +45,7 @@
 - **存储** — MySQL（索引与事务）· Redis · MongoDB · Elasticsearch
 - **中间件** — NSQ · Kafka · RabbitMQ · Asynq
 - **云原生与可观测** — Docker / Compose · Kubernetes（kind / Helm）· Prometheus · Loki · Tempo · Grafana · OpenTelemetry / Jaeger
-- **AI 工程** — ReAct Agent 运行时 · 工具调用 · RAG（Milvus / Qdrant）· 多智能体协作 · ASR 流式接入 |
+- **AI 工程** — ReAct Agent 运行时 · 工具调用 · RAG（Milvus / Qdrant）· 多智能体协作 · ASR 流式接入
 
 <br/>
 
@@ -102,28 +99,14 @@ Go · Gin · MySQL · Redis · RabbitMQ
 
 ## 🌱 开源
 
-**[ongrid](https://github.com/ongridio/ongrid)** · Go · AIOps Agent（1.2k ★）· 2026.10
+**[ongrid](https://github.com/ongridio/ongrid)** · Go · AIOps Agent（1.2k ★）
 
-定位了一个让所有 IM 通道全线不可用的并发死锁，报告被采纳、修复当天合并，并自主实现配套的可观测性改进。
+围绕 IM 长连接的状态可见性：1 个 issue + 3 个 PR。
 
-**① 缺陷报告** — [`#517`](https://github.com/ongridio/ongrid/issues/517)（已采纳）
-
-从 20 小时线上日志还原故障链，用的是三条互相独立的量化证据，而不是"看起来像"：
-
-- 605 次重连，间隔严格卡在 90s —— 不像网络抖动，像某个定时器在空转
-- 尝试计数与时间窗口互验：906min ÷ 1.5min ≈ 604，和重连次数对得上
-- 重连日志距 `context canceled` 仅 0.15ms —— 取消之后立刻又发起，说明调用方没真正退出
-
-据此定位到 `StreamSupervisor` 对 `<-slot.done` 的无界等待：reconcile 协程被永久阻塞，后续 IM 应用无法启动，而健康检查面板始终显示「凭证有效」。**问题在于监控测的是凭证，不是协程。**
-
-**② 修复** — [`#518`](https://github.com/ongridio/ongrid/pull/518)（维护者当天合并）
-
-**③ 自研改进** — [`#522`](https://github.com/ongridio/ongrid/pull/522)（已合并）
-
-新增并发安全的进程级长连接状态存储，在既有状态迁移点回写 `running / retrying / stopped` 与最后错误，经 API 可选字段透出，前端渲染状态点与错误 tooltip。12 文件 +626 / −11，`go test -race` 全绿。
-
-> 这次排查直接催生了上面的 OpsAgent：既然"面板显示健康但实际全挂"这种事会发生，
-> 那诊断就不该靠人盯监控，而该让 Agent 去取证、把根因和证据绑在一起。
+- [`#517`](https://github.com/ongridio/ongrid/issues/517) 飞书长连接卡死会让所有 IM 应用停止调度（维护者采纳并修复）
+- [`#522`](https://github.com/ongridio/ongrid/pull/522) 把 stream 运行状态透出到 Channels 页面：运行中 / 重连中 / 已停止 + 最后错误
+- [`#537`](https://github.com/ongridio/ongrid/pull/537) Slack 客户端取消不生效，关闭 socket 才能解阻
+- [`#538`](https://github.com/ongridio/ongrid/pull/538) 修 #522 里状态抖动、时间戳被反复重置的问题
 
 <br/>
 
