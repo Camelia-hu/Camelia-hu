@@ -1,0 +1,57 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 260" width="1280" height="260" role="img" aria-label="Camelia-hu — backend engineer, Go / Java, AIOps">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4E8CF7"/>
+      <stop offset="1" stop-color="#8E6EF7"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.05" r="0.7">
+      <stop offset="0" stop-color="#4E8CF7" stop-opacity="0.16"/>
+      <stop offset="0.55" stop-color="#8E6EF7" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#8E6EF7" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#FFFFFF" stroke-opacity="0.03" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="hairline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4E8CF7" stop-opacity="0"/>
+      <stop offset="0.18" stop-color="#4E8CF7" stop-opacity="0.9"/>
+      <stop offset="0.82" stop-color="#8E6EF7" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8E6EF7" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="260" fill="#0D1117"/>
+  <rect width="1280" height="260" fill="url(#grid)"/>
+  <rect width="1280" height="260" fill="url(#glow)"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace">
+    <text x="72" y="80" font-size="13.5" letter-spacing="3.2" fill="#8B949E">BACKEND ENGINEER</text>
+
+    <text x="68" y="146" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, Arial, sans-serif"
+          font-size="70" font-weight="700" letter-spacing="-2.8" fill="#E6EDF3">Camelia-hu</text>
+
+    <rect x="72" y="168" width="96" height="2" fill="url(#accent)"/>
+
+    <text x="72" y="206" font-size="17" letter-spacing="0.2" fill="#8D99A6">distributed systems · AIOps · evidence-first agents</text>
+  </g>
+
+  <g>
+    <rect x="944" y="58" width="272" height="144" rx="12" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+    <g font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace">
+      <g font-size="12" letter-spacing="2" fill="#7D8590">
+        <text x="972" y="96">FOCUS</text>
+        <text x="972" y="128">STACK</text>
+        <text x="972" y="160">STATUS</text>
+      </g>
+      <g font-size="14" letter-spacing="0.3" fill="#C9D1D9" text-anchor="end">
+        <text x="1188" y="96">AIOPS / RCA</text>
+        <text x="1188" y="128">GO · JAVA</text>
+        <text x="1188" y="160">OPEN TO WORK</text>
+      </g>
+      <line x1="972" y1="110" x2="1188" y2="110" stroke="#21262D"/>
+      <line x1="972" y1="142" x2="1188" y2="142" stroke="#21262D"/>
+    </g>
+  </g>
+
+  <rect x="0" y="256" width="1280" height="3" fill="url(#hairline)"/>
+</svg>
