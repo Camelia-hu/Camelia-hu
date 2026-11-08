@@ -1,6 +1,7 @@
 <!--
   GitHub 个人主页：这份 README 会渲染在 github.com/Camelia-hu。
-  hero 和分隔线都是 assets/ 里的手写 SVG，不依赖第三方图片服务；改配色时三处一起改：0D1117 / 4E8CF7 / 8E6EF7。
+  hero 和分隔线都是 assets/ 里的手写 SVG；整页不引任何第三方图片服务，外部站点挂掉也不会裂图。
+  改配色时三处一起改：0D1117 / 4E8CF7 / 8E6EF7。
   这里只放技术身份：不写真实姓名、学校、公司名和私人邮箱。
 -->
 
@@ -38,25 +39,12 @@
 
 ### feedsystem_video_go — 短视频 Feed 流
 
-`Go` · `Gin` · `MySQL` · `Redis` · `RabbitMQ`
+`Go` · `Gin` · `MySQL` · `Redis` · `RabbitMQ` · [源码](https://github.com/Camelia-hu/feedsystem_video_go-medium)
 
-<table>
-  <tr>
-    <td width="46%" valign="top">
-      <a href="https://github.com/Camelia-hu/feedsystem_video_go-medium">
-        <img width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=Camelia-hu&repo=feedsystem_video_go-medium&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=4E8CF7&icon_color=8E6EF7&text_color=C9D1D9" alt="feedsystem_video_go" />
-      </a>
-    </td>
-    <td width="54%" valign="top">
-      <sub>
-        · 推拉混合扩散：按粉丝数阈值切分大 V 读扩散与普通作者写扩散<br/>
-        · 多级缓存，并做过一次有意的缓存击穿实验<br/>
-        · Redis ZSET 预乘时间权重做热度衰减，读时 O(log N) 取 TopK<br/>
-        · 正在拆成 4 个微服务上 kind，配故障注入开关 + k6 压测对比
-      </sub>
-    </td>
-  </tr>
-</table>
+- **推拉混合扩散** — 按粉丝数阈值切分大 V 读扩散与普通作者写扩散
+- **多级缓存** — 并做过一次有意的缓存击穿实验
+- **热度衰减** — Redis ZSET 预乘时间权重，读时 O(log N) 取 TopK
+- **微服务化** — 正在拆成 4 个服务上 kind 集群，配故障注入开关 + k6 压测对比
 
 ## 开源
 
@@ -79,13 +67,6 @@
 | 云原生 | `Docker` `Kubernetes` `Helm` `kind` |
 | 可观测 | `Prometheus` `Loki` `Tempo` `Grafana` `OpenTelemetry` |
 | AI 工程 | `ReAct` `RAG` `Milvus` `Qdrant` `ASR` |
-
-## GitHub
-
-<div align="center">
-  <img height="150" src="https://github-readme-stats.vercel.app/api?username=Camelia-hu&show_icons=true&hide_border=true&bg_color=0D1117&title_color=4E8CF7&icon_color=8E6EF7&text_color=C9D1D9&rank_icon=percentile" alt="GitHub stats" />
-  <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Camelia-hu&layout=compact&langs_count=7&hide_border=true&bg_color=0D1117&title_color=4E8CF7&text_color=C9D1D9" alt="Top languages" />
-</div>
 
 ## 联系
 
